@@ -1,0 +1,62 @@
+.line-chart-container {
+  width: 64px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.chart {
+  display: inline-block;
+  margin-right: 0;
+  transition: all 0.3s ease;
+  transform: scaleX(-1) rotate(180deg);
+}
+.polyline {
+  stroke-dasharray: 320;
+  stroke-dashoffset: 0;
+  animation: dash 2s linear;
+}
+.success-chart .polyline {
+  stroke: #1dd495;
+}
+.primary-chart .polyline {
+  stroke: #8881ff;
+}
+.danger-chart .polyline {
+  stroke: #e67635;
+}
+
+@keyframes dash {
+  from {
+    stroke-dashoffset: 320;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.container {
+  padding: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.chart-title {
+  font-size: 12px;
+  line-height: 20px;
+
+  text-transform: uppercase;
+}
+.points-total {
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 32px;
+  color: #000000;
+}
+
+.border {
+  border: 2px solid #000;
+  width: 100%;
+  height: 0px;
+  background-color: red($color: #000000);
+}
